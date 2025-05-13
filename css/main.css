@@ -13,10 +13,20 @@
 
 .flex-container{
     display: flex;
-    width: 100%;
+    width: 90%;
+    margin: 5%;
+    gap: 1rem;
+    background-color: brown;
+    flex-wrap: wrap;
 }
 
 .card{
+    height: 200px;
     width: 30%;
     background-color: aquamarine;
+}
+
+.card img{
+    height: 50%;
+    width: 100%;
 }

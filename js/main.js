@@ -1,14 +1,62 @@
 const headerImageSources= [
-    "https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHBhaXNhamV8ZW58MHx8MHx8fDA%3D",
-    "https://img.freepik.com/foto-gratis/hermoso-camino-madera-que-impresionantes-arboles-coloridos-bosque_181624-5840.jpg?semt=ais_hybrid&w=740"
+    "../assets/images/banner/1.jpg",
+    "../assets/images/banner/2.jpg",
+    "../assets/images/banner/3.jpg",
+    "../assets/images/banner/4.jpg",
+    "../assets/images/banner/5.jpg",
+    "../assets/images/banner/6.jpg",
+    "../assets/images/banner/7.jpg",
+    "../assets/images/banner/8.jpg"
 ]
 const galleryElements = [
     {
-        src : "",
-        alt : "",
-        descripttion : ""
+        src :  "../assets/images/viajes/viajes-1.jpg",
+        alt : "Viaje 1",
+        description : "Destino increible a un sitio paradisiaco con un clima q buff"
+    },
+    {
+        src :  "../assets/images/viajes/viajes-2.jpg",
+        alt : "Viaje 2",
+        description : "Destino increible a un sitio paradisiaco con un clima q buff"
+    },
+    {
+        src :  "../assets/images/viajes/viajes-3.jpg",
+        alt : "Viaje 3",
+        description : "Destino increible a un sitio paradisiaco con un clima q buff"
+    },
+    {
+        src :  "../assets/images/viajes/viajes-4.jpg",
+        alt : "Viaje 4",
+        description : "Destino increible a un sitio paradisiaco con un clima q buff"
+    },
+    {
+        src :  "../assets/images/viajes/viajes-5.jpg",
+        alt : "Viaje 5",
+        description : "Destino increible a un sitio paradisiaco con un clima q buff"
+    },
+    {
+        src :  "../assets/images/viajes/viajes-6.jpg",
+        alt : "Viaje 6",
+        description : "Destino increible a un sitio paradisiaco con un clima q buff"
+    },
+    {
+        src :  "../assets/images/viajes/viajes-7.jpg",
+        alt : "Viaje 7",
+        description : "Destino increible a un sitio paradisiaco con un clima q buff"
     }
 ]
+const cities = [
+"Madrid",
+"Barcelona",
+"Valencia",
+"Seville",
+"Bilbao",
+"Granada",
+"Malaga",
+"Palma de Mallorca",
+"Alicante",
+"Zaragoza"
+];
 const fragment = new DocumentFragment();
 //Utility
 
@@ -26,11 +74,27 @@ const start = () => {
         const container = document.createElement("div");
         container.classList.add("card");
         const image = document.createElement("img");
-        container.append(image);
+        image.setAttribute("src", element.src);
+        image.setAttribute("alt", element.alt);
+        const title = document.createElement("h2");
+        title.textContent = element.alt;
+        const description = document.createElement("p");
+        description.textContent = element.description;
+        container.append(image, title, description);
         fragment.append(container);
     })
-    
     gallery.append(fragment);
+
+    const citySelector = document.querySelector("#citySelector");
+    cities.forEach(element => {
+        const option = document.createElement("option");
+        option.value = element;
+        option.textContent = element;
+        fragment.append(option);
+    })
+    citySelector.append(fragment);
+
+    
 }
 
 start();
