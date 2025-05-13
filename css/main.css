@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    border: 1px solid red;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#headerImg{
+    background-color: aqua;
+    height: auto;
+    width: 100%;
+}
+
+.flex-container{
+    display: flex;
+    width: 100%;
+}
+
+.card{
+    width: 30%;
+    background-color: aquamarine;
+}
