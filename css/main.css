@@ -18,15 +18,33 @@
     gap: 1rem;
     background-color: brown;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .card{
     height: 200px;
-    width: 30%;
+    width: 90%;
     background-color: aquamarine;
 }
 
 .card img{
     height: 50%;
     width: 100%;
+}
+
+
+/* Tablet */
+@media (min-width: 768px) {
+  /* Estilos específicos */
+  .card{
+    width: 45%;
+  }
+}
+
+/* Escritorio grande */
+@media (min-width: 1200px) {
+  /* Estilos específicos */
+  .card{
+    width: 30%;
+  }
 }
